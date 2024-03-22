@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material.Card
 import androidx.compose.material.FloatingActionButton
 import androidx.compose.material.Text
@@ -20,6 +21,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import com.tenskyline.mywishlistapp.data.DummyWish
 import com.tenskyline.mywishlistapp.data.Wish
 
 @Composable
@@ -49,7 +51,11 @@ fun HomeView() {
                 .fillMaxSize()
                 .padding(it)
         ) {
+            items(DummyWish.wishList) { wish ->
+                WishItem(wish = wish) {
 
+                }
+            }
         }
     }
 }
@@ -67,7 +73,7 @@ fun WishItem(wish: Wish, onClick: () -> Unit) {
         backgroundColor = Color.White
     ) {
         Column(
-            modifier= Modifier.padding(16.dp)
+            modifier = Modifier.padding(16.dp)
         ) {
             Text(text = wish.title, fontWeight = FontWeight.ExtraBold)
             Text(text = wish.description)
