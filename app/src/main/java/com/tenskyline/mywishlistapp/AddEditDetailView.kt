@@ -44,6 +44,7 @@ fun AddEditDetailView(
                     stringResource(id = R.string.add_wish)
                 }
             )
+            {navController.navigateUp()}
         }
     ) {
         Column(
