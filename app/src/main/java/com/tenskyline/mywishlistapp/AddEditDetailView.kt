@@ -72,7 +72,7 @@ fun AddEditDetailView(
 
             Button(
                 onClick = {
-                    if (viewModel.wishTitleState.isNotEmpty() && viewModel.wishDescriptionState.isNotEmpty()){
+                    if (viewModel.wishTitleState !="" && viewModel.wishDescriptionState !=""){
                         //Update wish
                     } else {
                         //Add wish
